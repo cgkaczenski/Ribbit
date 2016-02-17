@@ -31,8 +31,7 @@
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
-            >
+            android:theme="@android:style/Theme.Holo.Light.DarkActionBar">
         </activity>
         <activity
             android:name=".SignUpActivity"
@@ -40,6 +39,12 @@
             android:parentActivityName=".LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.DarkActionBar">
+        </activity>
+        <activity android:name=".EditFriendsActivity"
+                  android:label="@string/title_activity_edit_friends"
+                  android:parentActivityName=".MainActivity"
+                  android:screenOrientation="portrait"
+                  android:theme="@android:style/Theme.Holo.Light.DarkActionBar">
         </activity>
     </application>
 
