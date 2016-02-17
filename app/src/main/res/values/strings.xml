@@ -27,4 +27,8 @@
     <string name="login_error_title">Oops!</string>
     <string name="menu_logout_label">Logout</string>
     <string name="title_activity_test_activity">test_activity</string>
+    <string name="title_section1">Inbox</string>
+    <string name="title_section2">Friends</string>
+    <string name="empty_inbox_label">No new messages</string>
+    <string name="empty_friends_label">Add friends to begin!</string>
 </resources>
