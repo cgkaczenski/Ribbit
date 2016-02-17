@@ -21,4 +21,6 @@
     <string name="login_button_label">Login</string>
     <string name="sign_up_text">Sign Up</string>
     <string name="email_hint">Email</string>
+    <string name="signup_error_title">Oops!</string>
+    <string name="signup_error_message">Please Enter username, password, and email address</string>
 </resources>
