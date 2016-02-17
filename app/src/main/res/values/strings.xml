@@ -23,4 +23,8 @@
     <string name="email_hint">Email</string>
     <string name="signup_error_title">Oops!</string>
     <string name="signup_error_message">Please Enter username, password, and email address</string>
+    <string name="login_error_message">Please enter username and password</string>
+    <string name="login_error_title">Oops!</string>
+    <string name="menu_logout_label">Logout</string>
+    <string name="title_activity_test_activity">test_activity</string>
 </resources>
