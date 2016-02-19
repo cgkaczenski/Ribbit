@@ -70,12 +70,30 @@ public class MainActivity extends AppCompatActivity {
                 case 0:
                     takePicture();
                     break;
-                case 1: //take video
+                case 1:
+                    takeVideo();
                     break;
                 case 2: //choose picture
                     break;
                 case 3: //choose video
                     break;
+            }
+        }
+
+        private void takeVideo() {
+            Intent videoIntent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+            mMediaUri = getOutputMediaFileUri(MEDIA_TYPE_VIDEO);
+            if (mMediaUri == null) {
+                Toast.makeText(MainActivity.this,
+                        R.string.error_external_storage,
+                        Toast.LENGTH_LONG).show();
+            } else {
+                videoIntent.putExtra(MediaStore.EXTRA_OUTPUT, mMediaUri);
+                videoIntent.putExtra(MediaStore.EXTRA_DURATION_LIMIT, 10);
+                //TODO: test if higher video quality is possible
+                //https://developer.android.com/reference/android/provider/MediaStore.html#EXTRA_VIDEO_QUALITY
+                videoIntent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 0);
+                startActivityForResult(videoIntent, TAKE_VIDEO_REQUEST);
             }
         }
 
@@ -239,6 +257,20 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == RESULT_OK) {
+            //add to Gallery
+            Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+            mediaScanIntent.setData(mMediaUri);
+            sendBroadcast(mediaScanIntent);
+        } else if (resultCode != RESULT_CANCELED){
+            Toast.makeText(this, R.string.general_error, Toast.LENGTH_LONG).show();
+        }
     }
 
     private void navigateToLogin() {
