@@ -53,4 +53,6 @@
     <string name="error_selecting_file_title">We\'re Sorry!</string>
     <string name="success_message">Message sent!</string>
     <string name="error_sending_message">There was an error sending message. Try again</string>
+    <string name="image_label">image</string>
+    <string name="title_view_image_activity">ViewImageActivity</string>
 </resources>
